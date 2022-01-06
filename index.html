@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body onload="innerElement();">
+    
+    <header>
+
+        <h1>Esto es un verificador de palindromos</h1>
+
+    </header>
+
+
+    <aside>   
+        
+        <h2>¿Que es un palindromo?</h2>
+        <p>
+            Un palindromo es una palabra o expresión que es igual si se lee de izquierda a derecha que de derecha a izquierda
+        </p>
+
+    </aside>
+
+
+<section id="functionSection">
+
+    <textarea name="frase" id="textarea" placeholder="Inserte aqui su palabra a comprobar :)"></textarea>
+   
+    <button id="button">¿Tu frase es un palindromo?</button>
+
+    <p id="result"></p>
+
+
+    <hr class="separador"/>
+
+</section>
+
+<section id="descriptionSection">
+
+    <article id="cualEs">
+        <h2>¿Cual es el fin de esta pequeña web?</h2>
+        <code>Este desafio fue parte de mi capacitacion en Javascript dictada por FreeCodeCamp, por lo que solamente es la aplicacion de uno de los ejercicios a la web.</code>
+    </article>
+    
+    <article id="comoFue">
+        <h3>¿Como fue construida?</h3>
+        <code>Podes encontrar su codigo en: </code>
+    </article>
+
+</section>
+
+
+<footer>
+
+    <a>Volver al portfolio</a>
+    <p>Hecha por Facundo Alvarez basado en <a target="_blank"href="https://www.freecodecamp.org/learn">FreeCodeCamp</a></p>
+
+</footer>
+
+    <script src="Palindromos.js"></script>
+
+    <script>
+
+        function innerElement() {
+
+            let b = document.getElementById("button")
+            let result = document.getElementById("result")
+            b.onclick = comprobador
+
+        }
+
+        function comprobador(event) {
+            let  textArea = $(textarea)
+            
+            if(textArea.val().length > 1 ) { 
+
+               if(palindrome(textArea.val()) === true) {
+                result.textContent = "Su palabra es palindromo :)"
+
+            } else {
+                result.textContent = "Su palabra no es palindromo :("
+            }} else {
+                result.textContent = ""
+            }
+
+        }
+
+
+    </script>
+
+
+
+
+</body>
+</html>
